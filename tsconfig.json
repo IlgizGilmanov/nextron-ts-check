@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -17,12 +13,20 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "lib/*": ["./renderer/lib/*"],
+      "pages/*": ["./renderer/pages/*"],
+      "components/*": ["./renderer/components/*"],
+      "declarations/*": ["./renderer/declarations/*"],
+      "hooks/*": ["./renderer/hooks/*"],
+      "helpers/*": ["./renderer/helpers/*"],
+      "config/*": ["./renderer/config/*"],
+      "public/*": ["./renderer/public/*"],
+      "graphql/*": ["./renderer/graphql/*"],
+      "contexts/*": ["./renderer/contexts/*"],
+      "decorators/*": ["./renderer/decorators/*"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "renderer/next.config.js",
-    "app",
-    "dist"
-  ]
+  "exclude": ["node_modules", "renderer/next.config.js", "app", "dist"]
 }
