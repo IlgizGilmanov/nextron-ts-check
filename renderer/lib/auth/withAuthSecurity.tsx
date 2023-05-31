@@ -17,7 +17,13 @@ const withAuthSecurity = (Page: TNextPage): TNextPage => {
     const user = getCurrentUser({ apolloClient });
 
     if (!user) {
-      !!req && !!res ? res.redirect(302, SIGNIN) : Router.push(SIGNIN);
+      if(!!req && !!res) {
+        // Отличается из за то что не кастомный некстовый сервер, билд падает из за типизации
+        // res?.writeHead(307,  { Location: 'old-home' })
+        // res?.end()
+      } else {
+        Router.push('old-home');
+      }
     }
 
     return Page.getInitialProps ? Page.getInitialProps(context) : ctx;

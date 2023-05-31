@@ -6,7 +6,7 @@ import { getMarginStyles } from 'public/styles/config/margin';
 import { TIcon, TIconBase } from './types';
 import { configIcons, IconKeys } from './config';
 import { getFillStyles, getRotateStyles, getSizeStyles, getStrokeStyles } from './helpers';
-
+// добавить свг трансформер в конфиг сборщика
 const IconBase = styled.svg<TIconBase>(
   props => css`
     ${getSizeStyles(props)}
