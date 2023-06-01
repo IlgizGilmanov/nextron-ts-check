@@ -10,6 +10,12 @@ module.exports = {
       loader: "graphql-tag/loader",
     });
 
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.(tsx|ts|js|mjs|jsx)$/,
+      use: ["@svgr/webpack"],
+    });
+
     return config;
   },
 };
