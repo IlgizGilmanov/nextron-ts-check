@@ -1,38 +1,31 @@
-<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
+<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
 
 ## Usage
 
 ### Create an App
 
-```
+```bash
+# with `nextron`
+$ nextron init my-app --template custom-server-typescript
+
 # with npx
-$ npx create-nextron-app my-app --example basic-typescript
+$ npx create-nextron-app my-app --example custom-server-typescript
 
 # with yarn
-$ yarn create nextron-app my-app --example basic-typescript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example basic-typescript
-```
-
-### Install Dependencies
-
-```
-$ cd my-app
-
-# using yarn or npm
-$ yarn (or `npm install`)
-
-# using pnpm
-$ pnpm install --shamefully-hoist
+$ yarn create nextron-app my-app --example custom-server-typescript
 ```
 
 ### Use it
 
-```
-# development mode
-$ yarn dev (or `npm run dev` or `pnpm run dev`)
+```bash
+$ cd my-app
 
-# production build
-$ yarn build (or `npm run build` or `pnpm run build`)
+# Install dependencies
+$ yarn (or `npm install`)
+
+# Run development mode
+$ yarn dev (or `npm run dev`)
+
+# Build packages
+$ yarn build (or `npm run build`)
 ```

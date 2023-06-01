@@ -1,9 +1,13 @@
-module.exports = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.target = 'electron-renderer';
-    }
+const withTypeScript = require('@zeit/next-typescript');
 
-    return config;
+module.exports = withTypeScript({
+  webpack: config => Object.assign(config, {
+    target: 'electron-renderer',
+  }),
+  exportPathMap: async function () {
+    return {
+      '/home': { page: '/home' },
+      '/next': { page: '/next' },
+    };
   },
-};
+});

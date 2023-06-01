@@ -3,7 +3,7 @@ import {
   BrowserWindow,
   BrowserWindowConstructorOptions,
 } from 'electron';
-import Store from 'electron-store';
+import * as Store from 'electron-store';
 
 export default (windowName: string, options: BrowserWindowConstructorOptions): BrowserWindow => {
   const key = 'window-state';
@@ -68,12 +68,10 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
   state = ensureVisibleOnSomeDisplay(restore());
 
   const browserOptions: BrowserWindowConstructorOptions = {
-    ...state,
     ...options,
+    ...state,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,
-      ...options.webPreferences,
     },
   };
   win = new BrowserWindow(browserOptions);
