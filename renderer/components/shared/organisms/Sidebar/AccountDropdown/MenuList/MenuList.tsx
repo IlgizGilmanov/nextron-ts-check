@@ -26,6 +26,7 @@ const MenuList = ({ getItemProps, handleSelect, signOut }: TMenuList) => {
       },
       ref: logoutRef,
       index: logoutIndex,
+      testId: 'sign-out',
     },
   ];
 
@@ -37,6 +38,7 @@ const MenuList = ({ getItemProps, handleSelect, signOut }: TMenuList) => {
           ref={action.ref}
           type="button"
           role="option"
+          data-testid={action.testId}
           {...getItemProps({
             onClick: () => {
               action.handler();

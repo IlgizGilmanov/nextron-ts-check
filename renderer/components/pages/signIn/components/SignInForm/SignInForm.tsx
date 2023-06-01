@@ -10,7 +10,6 @@ import {
 } from 'config/constants/errorsText';
 import { PASSWORD_REGULAR_EXP } from 'config/constants/regularExpressions';
 import { RECOVERY_PASSWORD } from 'config/routes';
-import { DEFAULT_EMAIL, DEFAULT_PASSWORD } from 'config/vars';
 
 import ActionLink from 'components/shared/atoms/ActionLink';
 import Checkbox from 'components/shared/atoms/Checkbox';
@@ -31,7 +30,7 @@ const SignInForm = () => {
         title: 'Email',
         placeholder: 'Enter email',
         testId: 'input-email',
-        initialValue: DEFAULT_EMAIL || '',
+        initialValue: '',
         validationSchema: Yup.string().email(EMAIL_INVALID).max(255),
       },
       {
@@ -40,7 +39,7 @@ const SignInForm = () => {
         title: 'Password',
         placeholder: 'Enter password',
         testId: 'input-password',
-        initialValue: DEFAULT_PASSWORD || '',
+        initialValue: '',
         validationSchema: Yup.string()
           .trim()
           .min(6, PASSWORD_INVALID_LENGTH)

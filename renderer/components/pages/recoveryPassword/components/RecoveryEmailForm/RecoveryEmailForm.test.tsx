@@ -19,7 +19,7 @@ describe('RecoveryEmailForm', () => {
     mockedUsePasswordRecovery.mockImplementation(mockUsePasswordRecovery);
   });
 
-  test.skip('should call RecoveryPassword fn after click "Submit" button', async () => {
+  test('should call RecoveryPassword fn after click "Submit" button', async () => {
     // Arrange
     const inputEmailValue = 'email@gmail.com';
     const expectedValue = {

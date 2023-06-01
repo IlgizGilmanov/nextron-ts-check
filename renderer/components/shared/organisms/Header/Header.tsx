@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { ACTIVITY, PROFILE, SIGNIN, SIGNUP } from 'config/routes';
+import { PROFILE, SIGNIN, SIGNUP } from 'config/routes';
 
 import ActionLink from 'components/shared/atoms/ActionLink';
 import Logo from 'components/shared/atoms/Logo';
@@ -11,10 +11,7 @@ import { HeaderWrapper, Links } from './styled';
 import { ActionsConfig, THeader } from './types';
 
 const Header: FC<THeader> = ({ user, signOut }) => {
-  const links = [
-    { text: 'Profile', url: PROFILE, testId: 'profile' },
-    { text: 'Activity', url: ACTIVITY, testId: 'activity' },
-  ];
+  const links = [{ text: 'Profile', url: PROFILE, testId: 'profile' }];
 
   const actions: ActionsConfig[] = [
     { text: 'Sign Out', onClick: () => signOut({ everywhere: false }), testId: 'sign-out' },

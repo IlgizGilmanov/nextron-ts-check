@@ -31,13 +31,18 @@ const AccountDropdown = ({ user, signOut }: TAccountDropdown) => {
 
   return (
     <>
-      <StyledReference tabIndex={0} ref={refs.setReference} {...getReferenceProps()}>
+      <StyledReference
+        tabIndex={0}
+        ref={refs.setReference}
+        {...getReferenceProps()}
+        data-testid="account-dropdown-toggler"
+      >
         <AvatarWrapper>
           <ProfileImage avatar={user.avatarUrl} alt={user.email} />
         </AvatarWrapper>
         <UserInfo>
           <UserName>{[user.firstName, user.lastName].join(' ')}</UserName>
-          <UserEmail>{user.email}</UserEmail>
+          <UserEmail data-testid="user-name">{user.email}</UserEmail>
         </UserInfo>
       </StyledReference>
       {isOpen && (
