@@ -9,7 +9,8 @@
     "dev": "nextron",
     "dev:web": "next renderer",
     "build": "nextron build",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "types:check": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",

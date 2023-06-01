@@ -28,5 +28,6 @@
       "decorators/*": ["./renderer/decorators/*"]
     }
   },
-  "exclude": ["node_modules", "renderer/next.config.js", "app", "dist"]
+  // TODO: remove "**/*.test.tsx" after setup tests
+  "exclude": ["node_modules", "renderer/next.config.js", "app", "dist", "**/*.test.tsx"]
 }
