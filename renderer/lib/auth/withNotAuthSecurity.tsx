@@ -17,7 +17,11 @@ const withNotAuthSecurity = (Page: TNextPage): TNextPage => {
     const user = getCurrentUser({ apolloClient });
 
     if (user) {
-      !!req && !!res ? res.redirect(302, HOME) : Router.push(HOME);
+      if (!!req && !!res) {
+        // res.redirect(302, HOME)
+      } else {
+        Router.push(HOME);
+      }
     }
 
     return Page.getInitialProps ? Page.getInitialProps(context) : ctx;
