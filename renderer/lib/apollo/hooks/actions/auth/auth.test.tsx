@@ -11,9 +11,8 @@ import { RequestPasswordRecoveryDocument } from 'graphql/mutations/__generated__
 import { SignInDocument } from 'graphql/mutations/__generated__/signIn.generated';
 import { SignOutDocument } from 'graphql/mutations/__generated__/signOut.generated';
 import { SignUpDocument } from 'graphql/mutations/__generated__/signUp.generated';
-import { UpdatePasswordDocument } from 'graphql/mutations/__generated__/updatePassword.generated';
 
-import { usePasswordRecovery, useSignIn, useSignOut, useSignUp, useUpdatePassword } from './auth';
+import { usePasswordRecovery, useSignIn, useSignOut, useSignUp } from './auth';
 
 jest.mock('hooks/useNotifier');
 jest.mock('hooks/useRouter');
@@ -222,41 +221,41 @@ describe('Auth actions', () => {
     });
   });
 
-  describe('useUpdatePassword', () => {
-    test('should mutate state', async () => {
-      // Arrange
-      const data = {
-        password: 'password',
-        resetToken: 'test',
-      };
-      const expectedValue = { me: mockCurrentUser, accessToken: '', refreshToken: '' };
+  // describe('useUpdatePassword', () => {
+  //   test('should mutate state', async () => {
+  //     // Arrange
+  //     const data = {
+  //       password: 'password',
+  //       resetToken: 'test',
+  //     };
+  //     const expectedValue = { me: mockCurrentUser, accessToken: '', refreshToken: '' };
 
-      const mocks = [
-        {
-          request: {
-            query: UpdatePasswordDocument,
-            variables: {
-              input: data,
-            },
-          },
-          result: {
-            data: { updatePassword: expectedValue },
-          },
-        },
-      ];
+  //     const mocks = [
+  //       {
+  //         request: {
+  //           query: UpdatePasswordDocument,
+  //           variables: {
+  //             input: data,
+  //           },
+  //         },
+  //         result: {
+  //           data: { updatePassword: expectedValue },
+  //         },
+  //       },
+  //     ];
 
-      // Act
-      const { result } = renderHook(() => useUpdatePassword(), {
-        wrapper: ({ children }) => <MockedProvider mocks={mocks}>{children}</MockedProvider>,
-      });
+  //     // Act
+  //     const { result } = renderHook(() => useUpdatePassword(), {
+  //       wrapper: ({ children }) => <MockedProvider mocks={mocks}>{children}</MockedProvider>,
+  //     });
 
-      const execute = result.current[0];
-      setTimeout(() => execute(data));
+  //     const execute = result.current[0];
+  //     setTimeout(() => execute(data));
 
-      // Assert
-      await waitFor(() => {
-        expect(result?.current[1]?.data?.updatePassword).toEqual(expectedValue);
-      });
-    });
-  });
+  //     // Assert
+  //     await waitFor(() => {
+  //       expect(result?.current[1]?.data?.updatePassword).toEqual(expectedValue);
+  //     });
+  //   });
+  // });
 });

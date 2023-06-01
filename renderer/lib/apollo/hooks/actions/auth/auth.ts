@@ -5,17 +5,15 @@ import { useRequestPasswordRecoveryMutation } from 'graphql/mutations/__generate
 import { useSignInMutation } from 'graphql/mutations/__generated__/signIn.generated';
 import { useSignOutMutation } from 'graphql/mutations/__generated__/signOut.generated';
 import { useSignUpMutation } from 'graphql/mutations/__generated__/signUp.generated';
-import { useUpdatePasswordMutation } from 'graphql/mutations/__generated__/updatePassword.generated';
 import CurrentUser from 'graphql/queries/currentUser.graphql';
 
 import globalEvents from 'config/globalEvents.json';
-import { HOME, SIGNIN } from 'config/routes';
+import { HOME } from 'config/routes';
 import {
   RequestPasswordRecoveryInput,
   SignInInput,
   SignOutInput,
   SignUpInput,
-  UpdatePasswordInput,
 } from 'graphql/types';
 
 const { SIGN_IN_EVENT, SIGN_OUT_EVENT } = globalEvents;
@@ -137,27 +135,4 @@ export const usePasswordRecovery = () => {
   const detail = mutationState?.data?.requestPasswordRecovery?.detail || '';
 
   return [mutate, detail, error] as const;
-};
-
-export const useUpdatePassword = () => {
-  const { setError, setSuccess } = useNotifier();
-  const { pushRoute } = useRouter();
-
-  const [mutation, mutationState] = useUpdatePasswordMutation({
-    onCompleted: () => {
-      setSuccess('Password updated successfully');
-      setTimeout(() => pushRoute(SIGNIN), 1000);
-    },
-    onError: error => {
-      setError(error);
-    },
-  });
-
-  const mutate = async ({ password, resetToken }: UpdatePasswordInput) => {
-    const updatePasswordInput = { password, resetToken };
-
-    await mutation({ variables: { input: updatePasswordInput } });
-  };
-
-  return [mutate, mutationState] as const;
 };
