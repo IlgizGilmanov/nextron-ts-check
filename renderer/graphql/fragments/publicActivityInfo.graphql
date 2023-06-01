@@ -1,5 +1,0 @@
-fragment PublicActivity on PublicActivity {
-  body
-  id
-  title
-}
