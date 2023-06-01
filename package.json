@@ -24,6 +24,7 @@
     "formik": "^2.4.0",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
+    "http-proxy-middleware": "^2.0.6",
     "isomorphic-unfetch": "^4.0.2",
     "polished": "^4.2.2",
     "query-string": "^8.1.0",
