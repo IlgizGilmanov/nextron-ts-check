@@ -3,9 +3,9 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import Cookie from 'universal-cookie';
 import zlib from 'zlib';
 
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from 'config/jwt';
-import { API_URL } from 'config/vars';
-import { deleteTokensFromCookies, setTokensToCookies } from 'lib/auth/tokens';
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from '../../config/jwt';
+import { API_URL } from '../../config/vars';
+import { deleteTokensFromCookies, setTokensToCookies } from '../../lib/auth/tokens';
 
 // Working with refresh token
 const handleResponse = ({ req, res, body }: { req: Request; res: Response; body: Buffer }) => {

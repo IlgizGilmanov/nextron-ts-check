@@ -29,5 +29,10 @@
     }
   },
   // TODO: remove "**/*.test.tsx" after setup tests
-  "exclude": ["node_modules", "renderer/next.config.js", "app", "dist", "**/*.test.tsx"]
+  "exclude": ["node_modules", "renderer/next.config.js", "app", "dist", "**/*.test.tsx"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

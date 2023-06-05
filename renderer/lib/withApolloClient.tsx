@@ -16,8 +16,8 @@ import { apolloPolicies } from 'lib/apollo/apolloPolicies';
 import { GRAPHQL_APP_URL, PORT } from 'config/vars';
 import { ApolloPageContext, TApolloClient, TAppPage } from 'lib/apollo/types';
 
-const GRAPHQL_URI =
-  typeof window === 'undefined' ? `http://127.0.0.1:${PORT}${GRAPHQL_APP_URL}` : GRAPHQL_APP_URL;
+const GRAPHQL_URI = `http://127.0.0.1:${PORT}${GRAPHQL_APP_URL}`;
+// typeof window === 'undefined' ? `http://127.0.0.1:${PORT}${GRAPHQL_APP_URL}` : GRAPHQL_APP_URL;
 
 // Creates and configures the ApolloClient
 const createApolloClient = (apolloState = {}, ctx: ApolloPageContext | null) => {

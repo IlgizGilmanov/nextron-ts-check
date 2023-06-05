@@ -13,6 +13,15 @@ module.exports = {
       config.target = 'electron-renderer';
     }
 
+    // Fixes npm packages that depend on `fs`, `net`, `tls` modules
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
       exclude: /node_modules/,

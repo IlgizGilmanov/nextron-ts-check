@@ -21,13 +21,15 @@ const Tabs = ({ tabGroups }: TTabs) => {
               $isActive={pathname === url}
             >
               <Link href={url} passHref>
-                <Icon
-                  name={iconName}
-                  $strokeColor={pathname === url ? 'primary' : 'secondary_text'}
-                  $color="transparent"
-                  $size={18}
-                />
-                <span>{text}</span>
+                <a>
+                  <Icon
+                    name={iconName}
+                    $strokeColor={pathname === url ? 'primary' : 'secondary_text'}
+                    $color="transparent"
+                    $size={18}
+                  />
+                  <span>{text}</span>
+                </a>
               </Link>
             </TabItem>
           ))}
