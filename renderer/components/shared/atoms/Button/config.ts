@@ -33,9 +33,9 @@ export const colorConfig: TVariantConfig = {
     focused: defaultColor,
   },
   hollow: {
-    default: theme.colors.grey_500,
-    hover: theme.colors.grey_400,
-    focused: theme.colors.grey_500,
+    default: theme.colors.primary,
+    hover: theme.colors.primary,
+    focused: theme.colors.primary,
   },
 };
 
@@ -52,8 +52,8 @@ export const textDecorationConfig: TVariantConfig = {
     focused: defaultTextDecoration,
   },
   hollow: {
-    default: 'underline',
-    hover: 'none',
+    default: 'none',
+    hover: 'underline',
     focused: 'underline',
   },
 };

@@ -4,6 +4,7 @@ import ArrowChevronLeft from './arrow-chevron-left.svg';
 import ArrowChevronRight from './arrow-chevron-right.svg';
 import ArrowLeft from './arrow-left.svg';
 import Close from './close.svg';
+import EditPencil from './edit-pencil.svg';
 import Eye from './eye.svg';
 import EyeClosed from './eye-closed.svg';
 import MessageCircle from './message-circle.svg';
@@ -19,6 +20,7 @@ export {
   ArrowChevronRight,
   ArrowLeft,
   Close,
+  EditPencil,
   Eye,
   EyeClosed,
   MessageCircle,

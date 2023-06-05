@@ -6,22 +6,42 @@ export const Wrapper = styled.div(
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 1.75rem;
+    padding: 0.5rem 1.75rem;
 
     border-bottom: 1px solid ${colors.custom_grey_1};
   `,
 );
 
-export const Title = styled.h1`
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 2rem;
-`;
-
-export const Controls = styled.div`
+const Controls = styled.div`
   display: flex;
   flex: 1;
   gap: 1rem;
   align-items: center;
+`;
+
+export const LeftControls = styled(Controls)`
+  justify-content: flex-start;
+`;
+
+export const RightControls = styled(Controls)`
   justify-content: flex-end;
 `;
+
+export const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+`;
+
+export const PageTitle = styled.h1(
+  ({ theme: { colors } }) => css`
+    padding: 0.5rem;
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: ${colors.primary_text};
+  `,
+);

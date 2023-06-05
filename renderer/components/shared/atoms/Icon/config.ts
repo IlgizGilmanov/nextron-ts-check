@@ -7,6 +7,7 @@ export const configIcons = {
   'arrow-chevron-right': icons.ArrowChevronRight,
   'arrow-left': icons.ArrowLeft,
   close: icons.Close,
+  'edit-pencil': icons.EditPencil,
   eye: icons.Eye,
   'eye-closed': icons.EyeClosed,
   'message-circle': icons.MessageCircle,

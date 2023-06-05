@@ -12,7 +12,7 @@ import { Content } from './styled';
 export const SettingsPage: TNextPage = () => {
   return (
     <DefaultTemplate testId="settings-page">
-      <PageHeader title="Settings" />
+      <PageHeader />
       <Content>Settings page content</Content>
     </DefaultTemplate>
   );

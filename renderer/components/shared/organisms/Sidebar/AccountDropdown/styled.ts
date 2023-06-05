@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import defaultTransition from 'public/styles/config/defaultTransition';
+
 import { BaseStyledList } from 'components/shared/molecules/DropdownMenu';
 
 export const StyledReference = styled.div(
@@ -15,6 +17,7 @@ export const StyledReference = styled.div(
     border: 1px solid ${colors.custom_grey_1};
     border-radius: 0.375rem;
     box-shadow: 0 3px 4px -5px rgb(24 24 28 / 3%), 0 1px 2px rgb(24 24 28 / 4%);
+    ${defaultTransition};
 
     &:hover,
     &:focus {

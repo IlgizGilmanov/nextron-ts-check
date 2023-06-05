@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import defaultBoxShadow from 'public/styles/config/defaultBoxShadow';
+import defaultTransition from 'public/styles/config/defaultTransition';
 
 export const StyledReference = styled.div(
   ({ theme: { colors } }) => css`
@@ -18,6 +19,7 @@ export const StyledReference = styled.div(
 
     background-color: ${colors.custom_grey_3};
     border-radius: 1.25rem;
+    ${defaultTransition};
 
     &:hover,
     &:focus {

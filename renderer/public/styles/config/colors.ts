@@ -43,6 +43,7 @@ type CustomColors =
   | 'custom_grey_2'
   | 'custom_grey_3'
   | 'custom_grey_4'
+  | 'custom_grey_5'
   | 'global_blue_200';
 
 export type ColorKeys = 'black' | 'white' | 'transparent' | RegularColors | CustomColors;
@@ -58,6 +59,7 @@ export const configColors: Colors = {
   custom_grey_2: '#F6F6F6',
   custom_grey_3: '#F5F5F5',
   custom_grey_4: '#ADACB0',
+  custom_grey_5: '#DCDCDE',
   global_blue_200: '#F5F8FD',
 
   black: '#111827',

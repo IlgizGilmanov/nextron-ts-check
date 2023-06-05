@@ -12,7 +12,7 @@ import { Content } from './styled';
 export const HistoryPage: TNextPage = () => {
   return (
     <DefaultTemplate testId="history-page">
-      <PageHeader title="History" />
+      <PageHeader />
       <Content>History page content</Content>
     </DefaultTemplate>
   );

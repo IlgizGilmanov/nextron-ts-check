@@ -1,17 +1,17 @@
 import { ReactNode } from 'react';
 
-import { Controls, Title, Wrapper } from './styled';
+import { LeftControls, RightControls, Wrapper } from './styled';
 
 export type TPageHeader = {
-  title: string;
-  children?: ReactNode;
+  leftControls?: ReactNode;
+  rightControls?: ReactNode;
 };
 
-const PageHeader = ({ title, children }: TPageHeader) => {
+const PageHeader = ({ leftControls, rightControls }: TPageHeader) => {
   return (
     <Wrapper>
-      <Title>{title}</Title>
-      {children && <Controls>{children}</Controls>}
+      {leftControls && <LeftControls>{leftControls}</LeftControls>}
+      {rightControls && <RightControls>{rightControls}</RightControls>}
     </Wrapper>
   );
 };

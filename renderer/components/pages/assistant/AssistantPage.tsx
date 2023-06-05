@@ -6,11 +6,15 @@ import withGetDataFromTree from 'lib/apollo/withGetDataFromTree';
 
 import { TNextPage } from 'lib/apollo/types';
 
+import Button from 'components/shared/atoms/Button';
+import Icon from 'components/shared/atoms/Icon';
 import DropdownMenu from 'components/shared/molecules/DropdownMenu';
 import PageHeader from 'components/shared/molecules/PageHeader';
 import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
 
-import { Content, Wrapper } from './styled';
+import ChatterInput from './components/ChatterInput';
+
+import { ChatName, ChatNameWrapper, Content, Wrapper } from './styled';
 
 const toneOfVoiceItems = [
   'Clinical',
@@ -45,34 +49,53 @@ export const AssistantPage: TNextPage = () => {
 
   const handleToneOfVoiceSelect = (selectedIndex: number | null) => {
     setSelectedToneOfVoiceIndex(selectedIndex);
-    // eslint-disable-next-line no-console
-    // console.log('Selected Tone of voice index:', selectedIndex);
   };
 
   const handleSpeechStyleSelect = (selectedIndex: number | null) => {
     setSelectedSpeechStyleIndex(selectedIndex);
-    // eslint-disable-next-line no-console
-    // console.log('Selected Speech style index:', selectedIndex);
   };
 
   return (
     <DefaultTemplate testId="assistant-page">
       <Wrapper>
-        <PageHeader title="AI Assistant">
-          <DropdownMenu
-            defaultLabel="Tone of Voice"
-            menuItems={toneOfVoiceItems}
-            selectedIndex={selectedToneOfVoiceIndex}
-            onSelect={handleToneOfVoiceSelect}
-          />
-          <DropdownMenu
-            defaultLabel="Speech Style"
-            menuItems={speechStyleItems}
-            selectedIndex={selectedSpeechStyleIndex}
-            onSelect={handleSpeechStyleSelect}
-          />
-        </PageHeader>
-        <Content>AI Assistant page content</Content>
+        <PageHeader
+          leftControls={
+            <ChatNameWrapper>
+              <ChatName>Untitled Chat</ChatName>
+              <Button
+                variant="hollow"
+                iconType="only"
+                icon={
+                  <Icon
+                    name="edit-pencil"
+                    $color="transparent"
+                    $strokeColor="primary_text"
+                    $size={24}
+                  />
+                }
+              />
+            </ChatNameWrapper>
+          }
+          rightControls={
+            <>
+              <DropdownMenu
+                defaultLabel="Tone of Voice"
+                menuItems={toneOfVoiceItems}
+                selectedIndex={selectedToneOfVoiceIndex}
+                onSelect={handleToneOfVoiceSelect}
+              />
+              <DropdownMenu
+                defaultLabel="Speech Style"
+                menuItems={speechStyleItems}
+                selectedIndex={selectedSpeechStyleIndex}
+                onSelect={handleSpeechStyleSelect}
+              />
+            </>
+          }
+        />
+        <Content>
+          <ChatterInput />
+        </Content>
       </Wrapper>
     </DefaultTemplate>
   );
