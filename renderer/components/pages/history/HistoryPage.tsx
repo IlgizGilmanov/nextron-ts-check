@@ -4,7 +4,7 @@ import withGetDataFromTree from 'lib/apollo/withGetDataFromTree';
 
 import { TNextPage } from 'lib/apollo/types';
 
-import PageHeader from 'components/shared/molecules/PageHeader';
+import PageHeader, { PageTitle, PageWrapper } from 'components/shared/molecules/PageHeader';
 import DefaultTemplate from 'components/shared/templates/DefaultTemplate';
 
 import { Content } from './styled';
@@ -12,8 +12,10 @@ import { Content } from './styled';
 export const HistoryPage: TNextPage = () => {
   return (
     <DefaultTemplate testId="history-page">
-      <PageHeader />
-      <Content>History page content</Content>
+      <PageWrapper>
+        <PageHeader leftControls={<PageTitle>History</PageTitle>} />
+        <Content> </Content>
+      </PageWrapper>
     </DefaultTemplate>
   );
 };

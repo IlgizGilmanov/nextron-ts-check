@@ -8,8 +8,6 @@ export const Wrapper = styled.ul`
   flex-direction: column;
   gap: 1.125rem;
 
-  margin-top: 1.125rem;
-
   list-style: none;
 `;
 
